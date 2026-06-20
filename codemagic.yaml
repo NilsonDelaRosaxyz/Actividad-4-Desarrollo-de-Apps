@@ -9,7 +9,7 @@ workflows:
       - name: Obtener dependencias
         script: |
           flutter pub get
-      - name: Analizar codigo (opcional, no bloquea el build)
+      - name: Analizar codigo 
         script: |
           flutter analyze || true
       - name: Compilar APK
