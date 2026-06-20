@@ -3,20 +3,26 @@ workflows:
     name: EcoWatt Android Build
     max_build_duration: 30
     instance_type: mac_mini_m2
+
     environment:
       flutter: stable
+
     scripts:
       - name: Obtener dependencias
         script: |
           flutter pub get
-      - name: Analizar codigo 
+
+      - name: Analizar codigo
         script: |
           flutter analyze || true
+
       - name: Compilar APK
         script: |
           flutter build apk --release
-   artifacts:
-  - build/app/outputs/flutter-apk/*.apk
+
+    artifacts:
+      - build/app/outputs/flutter-apk/*.apk
+
     publishing:
       email:
         recipients:
